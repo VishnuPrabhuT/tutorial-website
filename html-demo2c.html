@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Third Web Page</title>
+</head>
+
+<body>
+    <!-- Container to wrap everything -->
+    <div id="container">
+        <!-- Brand of website -->
+        <header>My Web Site Brand</header>
+        <!-- Main Navigation -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="html-demo2b.html">About</a></li>
+                <li>Gallery</li>
+                <li><a href="html-demo2c.html">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- End Main Navigation -->
+
+        <!-- Main Content -->
+        <main>
+            <h1>My Third Heading</h1>
+            <p>My Third paragraph.</p>
+            <img src="images/central_park.jpg" alt="Central Park" width="500">
+
+            <form action="/signup" method="POST">
+                <fieldset>
+                    <legend>User personal information</legend>
+                    <label>Enter your full name</label><br>
+                    <input type="text" name="name"><br>
+
+                    <label>Enter your email</label><br>
+                    <input type="email" name="email"><br>
+
+                    <label>Enter your phone</label><br>
+                    <input type="tel" name="phone"><br>
+
+                    <br><label>Select your gender</label><br>
+                    <input type="radio" value="male">Male
+                    <input type="radio" value="female">Female <br>
+
+                    <br><label>How should we contact you?</label><br>
+                    <select>
+                        <option>Email</option>
+                        <option>Phone</option>
+                    </select><br>
+
+                    <br>Tell us the reason of your visit today:<br>
+                    <textarea cols="30" rows="5"></textarea><br>
+
+                    <input type="submit" value="Send">
+                    <input type="reset" value="Reset">
+
+                </fieldset>
+            </form>
+        </main>
+        <!-- End Main Content -->
+
+        <!-- Footer Information -->
+        <footer>&copy; Copyright 2020</footer>
+    </div>
+    <!-- End Main Container -->
+</body>
+
+</html>

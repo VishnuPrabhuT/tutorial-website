@@ -1,3 +1,3 @@
-# tutorial-website
+# week1-day1
 
-Creatng a website and pushing it to Git.
+week1-day1
