@@ -106,3 +106,56 @@ footer {
   padding-top: 20px;
   color: rgb(211, 218, 240);
 }
+
+.gallery-container {
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.photo {
+  position: relative;
+  text-align: center;
+}
+
+figure {
+  position: relative;
+  width: 100%;
+}
+
+.photo figcaption {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+li.photo {
+  list-style: none;
+  width: 300px;
+}
+
+.photo img {
+  margin: 10px 0;
+  width: 300px;
+  cursor: pointer;
+}
+
+.photo div {
+  position: relative;
+  top: 150px;
+  width: max-content;
+  margin: 0 auto;
+  z-index: 500;
+  background: #333;
+  padding: 10px;
+  visibility: hidden;
+}
+
+figure:hover div {
+  visibility: visible;
+  opacity: 0.7;
+}
