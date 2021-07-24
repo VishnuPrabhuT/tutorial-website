@@ -25,15 +25,18 @@
         img.alt = item.description || item.alt_description;
         div.innerText = (item.description || item.alt_description).slice(0, 40);
 
+
+
         figure.appendChild(div)
         figure.appendChild(img)
         figure.appendChild(figurecaption);
+
+
         li.appendChild(figure);
 
         container.appendChild(li);
 
     });
-
 
     function getDescription(desc) {
         if (!desc) {
@@ -41,4 +44,21 @@
         }
         return desc.slice(0, 25).toUpperCase();
     }
+
+    document.querySelectorAll(".gallery-container figure").forEach(fig => {
+        fig.querySelector("img").addEventListener("click", (e) => {
+            let container = document.querySelector(".modal-container");
+            let header = document.querySelector(".modal-container .modal-header");
+            container.classList.toggle("visible");
+
+            console.log(container.classList);
+
+            header.innerText = e.target.parentElement.querySelector("figurecaption").innerText;
+        });
+    });
+
+    document.querySelector(".modal-close").addEventListener("click", (e) => {
+        let container = document.querySelector(".modal-container");
+        container.classList.toggle("visible");
+    })
 }();
