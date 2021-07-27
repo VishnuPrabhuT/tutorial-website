@@ -6,7 +6,7 @@
     // let data = await res.json();
 
     let data = window.base;
-    console.log(data)
+    //console.log(data)
 
     let container = document.querySelector(".gallery-container")
 
@@ -24,8 +24,6 @@
         img.src = `images/gallery/${item.id}.jpg`;
         img.alt = item.description || item.alt_description;
         div.innerText = (item.description || item.alt_description).slice(0, 40);
-
-
 
         figure.appendChild(div)
         figure.appendChild(img)
@@ -45,13 +43,11 @@
         return desc.slice(0, 25).toUpperCase();
     }
 
-    document.querySelectorAll(".gallery-container figure").forEach(fig => {
-        fig.querySelector("img").addEventListener("click", (e) => {
+    document.querySelectorAll(".gallery-container figure > div").forEach(d => {
+        d.addEventListener("click", (e) => {
             let container = document.querySelector(".modal-container");
             let header = document.querySelector(".modal-container .modal-header");
             container.classList.toggle("visible");
-
-            console.log(container.classList);
 
             header.innerText = e.target.parentElement.querySelector("figurecaption").innerText;
         });
