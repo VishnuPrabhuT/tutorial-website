@@ -29,7 +29,7 @@
         figure.appendChild(img)
         figure.appendChild(figurecaption);
 
-
+        figure.classList.add("lightbox-toggle");
         li.appendChild(figure);
 
         container.appendChild(li);
@@ -58,3 +58,35 @@
         container.classList.toggle("visible");
     })
 }();
+
+$(document).ready(function () {
+
+    /* Open lightbox on button click */
+    $('.lightbox-toggle img').click(function (e) {
+        $('.backdrop').animate({ 'opacity': '.8' }, 300, 'linear').css('display', 'block');
+        $('.box').fadeIn();
+
+        //Check if lightbox has an image
+        if ($('.box').contents('img')) {
+            $('.box').contents().remove('img'); //If true, clear image
+        }
+
+        //Get text content in attribute
+        var $altvalue = $(this).attr('alt'); //or var altvalue = $(this).attr('alt');
+
+
+        var img = $(e.target).clone(); //Duplicate DOM element
+        img.width = "200px";
+        $('.box').append(img); //Insert duplicated element in another element
+
+    });
+
+    /* Click to close lightbox */
+    $('.close, .backdrop').click(function () {
+        $('.backdrop').animate({ 'opacity': '0' }, 300, 'linear', function () {
+            $('.backdrop').css('display', 'none');
+        });
+        $('.box').fadeOut();
+    });
+
+});
